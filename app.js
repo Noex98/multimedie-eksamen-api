@@ -11,9 +11,10 @@ const PORT = process.env.PORT || 4000;
 const path = require('path');
 const { json } = require('express');    
 const options = { root: path.join(__dirname) };
-app.use(express.json())
-app.use(express.urlencoded());
 
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: true }));
 app.use(morgan('dev'));
 
 // Cors headers
