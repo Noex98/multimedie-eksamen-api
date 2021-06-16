@@ -54,7 +54,6 @@ app.post('/api/contact', (req, res) => {
                     console.log(err)
                 }
             })
-            res.send('Kontakt information opdateret')
         }
     })
 })
