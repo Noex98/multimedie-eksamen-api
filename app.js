@@ -3,6 +3,7 @@ const express = require ('express');
 const router = express.Router();
 const morgan = require('morgan');
 const fs = require('fs');
+const multer = require('multer')
 
 
 // Config
@@ -16,6 +17,17 @@ const options = { root: path.join(__dirname) };
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: true }));
 app.use(morgan('dev'));
+
+const fileStorageEngine = multer.diskStorage({
+    destination:(req, file, cb) => {
+        cb(null, './data/images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+})
+
+const upload = multer({storage: fileStorageEngine})
 
 // Cors headers
 app.use((req, res, next) => {
@@ -54,6 +66,29 @@ app.post('/api/contact', (req, res) => {
                     console.log(err)
                 }
             })
+        }
+    })
+})
+
+// Add new image
+app.post('/api/img', upload.single('image'), (req, res) => {
+    fs.readFile('./data/img.json', (err, rawData) => {
+        if(err){
+            console.log(err);
+        } else {
+            let oldData = JSON.parse(rawData)
+            oldData.unshift({
+                url: '/static/' + req.file.originalname,
+                alt: req.body.alt,
+                tag: req.body.alt
+            })
+            
+            fs.writeFile('./data/img.json', JSON.stringify(oldData, null, 2), err => {
+                if(err){
+                    console.log(err)
+                }
+            })
+            res.send('req modtaget')
         }
     })
 })
