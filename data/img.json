@@ -1,62 +1,67 @@
 [
-  {
-    "url": "/static/altan.JPEG",
-    "alt": "Altan",
-    "tag": "altan"
-  },
-  {
-    "url": "/static/altansort.jpeg",
-    "alt": "Altan",
-    "tag": "altan"
-  },
-  {
-    "url": "/static/altangelander.jpg",
-    "alt": "Altan",
-    "tag": "altan"
-  },
-  {
-    "url": "/static/altanhus.jpg",
-    "alt": "Altan",
-    "tag": "altan"
-  },
-  {
-    "url": "/static/bro.jpg",
-    "alt": "Bro",
-    "tag": "special"
-  },
-  {
-    "url": "/static/trappe.JPG",
-    "alt": "trappe",
-    "tag": "trappe"
-  },
-  {
-    "url": "/static/trappe2.jpeg",
-    "alt": "trappe",
-    "tag": "trappe"
-  },
-  {
-    "url": "/static/toender.jpg",
-    "alt": "Toender",
-    "tag": "special"
-  },
-  {
-    "url": "/static/toender1.jpg",
-    "alt": "Toender",
-    "tag": "special"
-  },
-  {
-    "url": "/static/trappe1.jpg",
-    "alt": "trappe",
-    "tag": "trappe"
-  },
-  {
-    "url": "/static/dr1.jpeg",
-    "alt": "DR studiet",
-    "tag": "special"
-  },
-  {
-    "url": "/static/IMG_3611.jpeg",
-    "alt": "DR studiet",
-    "tag": "special"
-  }
+    {
+        "url": "/static/altan.JPEG",
+        "alt": "Altan",
+        "tag": "altan"
+    },
+    {
+        "url": "/static/altan1.png",
+        "alt": "Altan",
+        "tag": "altan"
+    },
+    {
+        "url": "/static/altansort.jpeg",
+        "alt": "Altan",
+        "tag": "altan"
+    },
+    {
+        "url": "/static/altangelander.jpg",
+        "alt": "Altan",
+        "tag": "altan"
+    },
+    {
+        "url": "/static/altanhus.jpg",
+        "alt": "Altan",
+        "tag": "altan"
+    },
+    {
+        "url": "/static/bro.jpg",
+        "alt": "Bro",
+        "tag": "special"
+    },
+    {
+        "url": "/static/trappe.JPG",
+        "alt": "trappe",
+        "tag": "trappe"
+    },
+    {
+        "url": "/static/trappe2.jpeg",
+        "alt": "trappe",
+        "tag": "trappe"
+    },
+    {
+        "url": "/static/toender.jpg",
+        "alt": "Toender",
+        "tag": "special"
+    },
+    {
+        "url": "/static/toender1.jpg",
+        "alt": "Toender",
+        "tag": "special"
+    },
+    {
+        "url": "/static/trappe1.jpg",
+        "alt": "trappe",
+        "tag": "trappe"
+    },
+    {
+        "url": "/static/dr1.jpeg",
+        "alt": "DR studiet",
+        "tag": "special"
+    },
+    {
+        "url": "/static/IMG_3611.jpeg",
+        "alt": "DR studiet",
+        "tag": "special"
+    }
 ]

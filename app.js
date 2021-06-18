@@ -77,19 +77,43 @@ app.post('/api/img', upload.single('image'), (req, res) => {
             console.log(err);
         } else {
             let oldData = JSON.parse(rawData)
-            oldData.unshift({
+            let newData = oldData.unshift({
                 url: '/static/' + req.file.originalname,
                 alt: req.body.alt,
                 tag: req.body.alt
             })
             
-            fs.writeFile('./data/img.json', JSON.stringify(oldData, null, 2), err => {
+            fs.writeFile('./data/img.json', JSON.stringify(newData, null, 4), err => {
+                if(err){
+                    console.log(err)
+                }
+                res.status(200)
+            })
+        }
+    })
+})
+
+// Delete image
+app.delete('/api/img', (req, res) => {
+    fs.readFile('./data/img.json', (err, rawData) => {
+        if(err){
+            console.log(err);
+        } else {
+            let oldData = JSON.parse(rawData)
+            console.log(req.body.url)
+            let newData = oldData.filter(item => item.url !== req.body.url)
+            fs.unlink('./data/images/' + req.body.url.substring(8), err => {
                 if(err){
                     console.log(err)
                 }
             })
-            res.send('req modtaget')
+            fs.writeFile('./data/img.json', JSON.stringify(newData, null, 4), err => {
+                if(err){
+                    console.log(err)
+                }
+            }) 
         }
+        res.status(200).send('billed liste opdateret')
     })
 })
 
