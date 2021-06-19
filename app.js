@@ -100,7 +100,6 @@ app.delete('/api/img', (req, res) => {
             console.log(err);
         } else {
             let oldData = JSON.parse(rawData)
-            console.log(req.body.url)
             let newData = oldData.filter(item => item.url !== req.body.url)
             fs.unlink('./data/images/' + req.body.url.substring(8), err => {
                 if(err){
@@ -111,7 +110,7 @@ app.delete('/api/img', (req, res) => {
                 if(err){
                     console.log(err)
                 }
-            }) 
+            })
         }
         res.status(200).send('billed liste opdateret')
     })
