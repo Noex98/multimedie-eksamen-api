@@ -77,13 +77,13 @@ app.post('/api/img', upload.single('image'), (req, res) => {
             console.log(err);
         } else {
             let oldData = JSON.parse(rawData)
-            let newData = oldData.unshift({
+            oldData.unshift({
                 url: '/static/' + req.file.originalname,
                 alt: req.body.alt,
                 tag: req.body.alt
             })
             
-            fs.writeFile('./data/img.json', JSON.stringify(newData, null, 4), err => {
+            fs.writeFile('./data/img.json', JSON.stringify(oldData, null, 4), err => {
                 if(err){
                     console.log(err)
                 }
