@@ -80,7 +80,7 @@ app.post('/api/img', upload.single('image'), (req, res) => {
             oldData.unshift({
                 url: '/static/' + req.file.originalname,
                 alt: req.body.alt,
-                tag: req.body.alt
+                tag: req.body.tag
             })
             
             fs.writeFile('./data/img.json', JSON.stringify(oldData, null, 4), err => {
